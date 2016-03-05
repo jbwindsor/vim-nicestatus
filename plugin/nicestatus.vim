@@ -1,11 +1,5 @@
 " NeatStatus (c) 2012 Lukasz Grzegorz Maciak
 " Neat and simple status line - because Powerline is overrated
-"    _   _            _   ____  _        _             
-"   | \ | | ___  __ _| |_/ ___|| |_ __ _| |_ _   _ ___ 
-"   |  \| |/ _ \/ _` | __\___ \| __/ _` | __| | | / __|
-"   | |\  |  __/ (_| | |_ ___) | || (_| | |_| |_| \__ \
-"   |_| \_|\___|\__,_|\__|____/ \__\__,_|\__|\__,_|___/
-"   Vim plugin by Luke Maciak (c) 2012
 "
 " Loosely based on a script by Tomas Restrepo (winterdom.com)
 " " Original available here:
@@ -17,12 +11,12 @@ let g:last_mode=""
 " Color Scheme Settings
 " You can redefine these in your .vimrc
 
-" Full color setting stuff
-" = 'guifg=#ff00ff guibg=#000000 gui=NONE ctermfg=7 ctermbg=0'
-
 " ==============================================================================
 "  Colors 
 " ==============================================================================
+
+    " Full color setting stuff
+    " = 'guifg=#ff00ff guibg=#000000 gui=NONE ctermfg=7 ctermbg=0'
 
     " =============
     " Standard 
@@ -113,16 +107,6 @@ function! SetStatusColorscheme()
     exec 'hi User5 '.g:sl_linenumber
     exec 'hi User6 '.g:sl_modified
 
-    " exec 'hi User1 '.g:sl_normal
-    " exec 'hi User2 '.g:sl_replace
-    " exec 'hi User3 '.g:sl_insert
-    " exec 'hi User4 '.g:sl_visual
-    " exec 'hi User5 '.g:sl_position
-    " exec 'hi User6 '.g:sl_modified
-    " exec 'hi User7 '.g:sl_linenumber
-    " exec 'hi User8 '.g:sl_fileinfo
-    " exec 'hi User9 '.g:sl_filestatus
-
 endfunc
 
 " pretty mode display - converts the one letter status notifiers to words
@@ -211,13 +195,6 @@ if has('statusline')
             let g:neatstatus_session = '?'
         endif
     
-        " exec 'hi User1 '.g:sl_normal
-        " exec 'hi User2 '.g:sl_termtype
-        " exec 'hi User3 '.g:sl_fileinfo
-        " exec 'hi User4 '.g:sl_filestatus
-        " exec 'hi User5 '.g:sl_linenumber
-        " exec 'hi User6 '.g:sl_modified
-
         " zero out
         let &stl=""
         
@@ -228,10 +205,10 @@ if has('statusline')
         let &stl.="%2* %{g:neatstatus_session} %0*"
         
         " file path
-        let &stl.="%3* %<%F "
+        let &stl.="%3* %<%f "
 
         " read only, modified, modifiable flags in brackets
-        let &stl.="%([%R%M]%) "
+        let &stl.="%%([%R%M]%) "
 
         " right-aligh everything past this point
         let &stl.="%= "
