@@ -202,10 +202,13 @@ if has('statusline')
         let &stl.="%1*\ %{Mode()} %0*"
         
         " session name
-        let &stl.="%2* %{g:neatstatus_session} %0*"
+        " let &stl.="%2* %{g:neatstatus_session} %0*"
+        
+        " " file path
+        " let &stl.="%3* %<%f "
         
         " file path
-        let &stl.="%3* %<%f "
+        let &stl.="%3* %f "
 
         " read only, modified, modifiable flags in brackets
         let &stl.="%%([%R%M]%) "
@@ -220,16 +223,16 @@ if has('statusline')
         let &stl.="%3*%( %{&filetype} %)".g:sl_separator." %0*"
         
         " file format (eg. unix, dos, etc..)
-        let &stl.="%3*%{&fileformat} ".g:sl_separator." "
+        let &stl.="%<%3*%{&fileformat} ".g:sl_separator." "
         
-        " file encoding (eg. utf8, latin1, etc..)
-        let &stl.="%(%{(&fenc!=''?&fenc:&enc)} ".g:sl_separator." %)"
+        " " file encoding (eg. utf8, latin1, etc..)
+        " let &stl.="%(%{(&fenc!=''?&fenc:&enc)} ".g:sl_separator." %)"
         
         " buffer number
         let &stl.="BUF #%n "
         
         "line number (red) / total lines
-        let &stl.="%4* LN %5*%-4.l%4*/%-4.L\ "
+        let &stl.="%<%4* LN %5*%-4.l%4*/%-4.L\ "
         
         " percentage done
         let &stl.="%4*(%-3.p%%) %4*"
