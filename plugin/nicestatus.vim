@@ -201,11 +201,6 @@ if has('statusline')
         " mode (changes color)
         let &stl.="%1*\ %{Mode()} %0*"
         
-        " session name
-        " let &stl.="%2* %{g:neatstatus_session} %0*"
-        
-        " " file path
-        " let &stl.="%3* %<%f "
         
         " file path
         let &stl.="%3* %f "
@@ -230,6 +225,9 @@ if has('statusline')
         
         " buffer number
         let &stl.="BUF #%n "
+        
+        " session name
+        let &stl.="%<%2* %{g:neatstatus_session} %0*"
         
         "line number (red) / total lines
         let &stl.="%<%4* LN %5*%-4.l%4*/%-4.L\ "
